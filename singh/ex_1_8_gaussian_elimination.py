@@ -1,25 +1,17 @@
 import numpy as np
 
 
-# Use Gaussian elimination to get:
-# a = [
-#     *, *, *, *,
-#     0, *, *, *,
-#     0, 0, A, B
-# ]
-# where A, B, and * are real numbers
-
 a1 = np.array([
-    [1, -3, 5, -9],
-    [2, -1, -3, 19],
-    [3, 1, 4, -13]
+    [1, 3, 2, 13],
+    [4, 4, -3, 3],
+    [5, 1, 2, 13]
 ])
 print(a1)
 print('---')
 
 a2 = np.array([
     a1[0],
-    a1[1] - a1[1, 0] * a1[0],
+    a1[1] - a1[0] * a1[1, 0],
     a1[2]
 ])
 print(a2)
@@ -45,4 +37,4 @@ print('---')
 z = final[2, 3] / final[2, 2]
 y = (final[1, 3] - final[1, 2] * z) / final[1, 1]
 x = (final[0, 3] - final[0, 1] * y - final[0, 2] * z) / final[0, 0]
-print('x:', x, 'y:', y, 'z:', z)
+print(f'x: {x}, y: {y}, z: {z}')
