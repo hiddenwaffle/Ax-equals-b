@@ -1,6 +1,15 @@
 # Ax=b
 
-Random self-taught linear algebra notes
+Random notes from self-teaching linear algebra
+
+## Development
+
+Example
+
+```
+poetry install
+poetry run python -i -m singh.<module>
+```
 
 ## Modules
 

@@ -11,5 +11,6 @@ a1 = np.array([
     [0, -13, 5, 37],
     [0, 0, 5, -15]
 ])
-print(a1)
-print('---')
+
+num_rows, _ = a1.shape
+print(a1[num_rows - 1])
