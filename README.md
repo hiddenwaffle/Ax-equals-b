@@ -8,7 +8,7 @@ Example
 
 ```
 poetry install
-poetry run python -i -m singh.<module>
+poetry run python -i -m path.to.file
 ```
 
 ## Modules
