@@ -10,7 +10,10 @@ class Graph:
         self.ymin = 0
         self.ymax = 0
 
-    def append(self, v):
+    def append(self, v, color='black'):
+        """color is from:
+        https://matplotlib.org/3.1.0/gallery/color/named_colors.html
+        """
         ax = plt.gca()
         self.xmin = v[0] < self.xmin and v[0] or self.xmin
         self.xmax = v[0] > self.xmax and v[0] or self.xmax
@@ -18,7 +21,7 @@ class Graph:
         self.ymax = v[1] > self.ymax and v[1] or self.ymax
         ax.set_xlim([self.xmin - 1, self.xmax + 1])
         ax.set_ylim([self.ymin - 1, self.ymax + 1])
-        return ax.quiver(0, 0, *v, angles='xy', scale_units='xy', scale=1)
+        return ax.quiver(0, 0, *v, angles='xy', scale_units='xy', scale=1, color=color)
 
     @staticmethod
     def show():
