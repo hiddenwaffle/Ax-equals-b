@@ -31,6 +31,10 @@ class Graph:
 
     @staticmethod
     def show():
+        # Make origin obvious
+        plt.plot((0, 0), (0, 0), marker='D', color='pink')
+        # https://stackoverflow.com/a/17996099
+        plt.gca().set_aspect('equal', adjustable='datalim')
         plt.show()
 
     def fix_bounds(self, vs):
