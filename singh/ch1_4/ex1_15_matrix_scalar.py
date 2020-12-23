@@ -10,12 +10,12 @@ print(A)
 g = Graph()
 
 for v in A.T:
-    g.append(v)
+    g.add_vector(v)
 
 A *= 2
 print(A)
 
 for v in A.T:
-    g.append(v, color='tab:blue')
+    g.add_vector(v, color='tab:blue')
 
 g.show()

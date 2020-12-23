@@ -4,8 +4,8 @@ from util.graph import Graph
 v = np.array([3, 1])
 
 g = Graph()
-g.append(0.5 * v)
-g.append(2 * v)
-g.append(3 * v)
-g.append(-v)
+g.add_vector(0.5 * v)
+g.add_vector(2 * v)
+g.add_vector(3 * v)
+g.add_vector(-v)
 g.show()

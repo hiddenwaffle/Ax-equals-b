@@ -7,7 +7,7 @@ u_plus_v = u + v
 print(u_plus_v)
 
 g = Graph()
-g.append(u)
-g.append(v)
-g.append(u_plus_v)
+g.add_vector(u)
+g.add_vector(v)
+g.add_vector(u_plus_v)
 g.show()
