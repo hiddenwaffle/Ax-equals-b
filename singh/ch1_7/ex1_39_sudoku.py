@@ -1,4 +1,5 @@
 import numpy as np
+import sympy
 
 m = np.array([
     [1, 1, 1, 0, 0, 0, 15],
@@ -8,4 +9,7 @@ m = np.array([
     [0, 0, 1, 0, 0, 1, 6]
 ])
 
+m, pivots = sympy.Matrix(m).rref()
+m = np.array(m, dtype=float)
 print(m)
+print(pivots)

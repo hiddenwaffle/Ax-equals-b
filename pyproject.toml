@@ -9,6 +9,8 @@ license = "MIT"
 python = "^3.9"
 numpy = "^1.19.4"
 matplotlib = "^3.3.3"
+sympy = "^1.7.1"
+mpmath = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 
