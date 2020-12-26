@@ -16,7 +16,7 @@ class Graph:
         https://matplotlib.org/3.1.0/gallery/color/named_colors.html
         """
         ax = plt.gca()
-        self.fix_bounds([v])
+        self.fix_bounds([v], is_vector=True)
         if start is None:
             start = [0, 0]
         return ax.quiver(*start, *v, angles='xy', scale_units='xy', scale=1, color=color)
@@ -33,12 +33,18 @@ class Graph:
     def show():
         # Make origin obvious
         plt.plot((0, 0), (0, 0), marker='D', color='pink')
-        # https://stackoverflow.com/a/17996099
-        plt.gca().set_aspect('equal', adjustable='datalim')
+        # https://stackoverflow.com/a/17996099  # TODO: Why was this necessary at some point?
+        # plt.gca().set_aspect('equal', adjustable='datalim')  # TODO: What does this do again?
         plt.show()
 
-    def fix_bounds(self, vs):
+    def fix_bounds(self, vs, is_vector=False):
         """Center and zoom the graph around the points"""
+        if is_vector:
+            # Ensure that the origin is still in view
+            self.xmin = self.xmin or 0
+            self.xmax = self.xmax or 0
+            self.ymin = self.ymin or 0
+            self.ymax = self.ymax or 0
         ax = plt.gca()
         for v in vs:
             if self.xmin is not None:
@@ -57,5 +63,5 @@ class Graph:
                 self.ymax = v[1] > self.ymax and v[1] or self.ymax
             else:
                 self.ymax = v[1]
-            ax.set_xlim([self.xmin - 1, self.xmax + 1])
-            ax.set_ylim([self.ymin - 1, self.ymax + 1])
+            ax.set_xlim(self.xmin - 1, self.xmax + 1)
+            ax.set_ylim(self.ymin - 1, self.ymax + 1)
