@@ -1,5 +1,5 @@
 import numpy as np
-from math import acos, degrees, sqrt
+from math import acos, degrees, sqrt, pi
 
 
 def angle(u, v):
@@ -9,14 +9,14 @@ def angle(u, v):
 
 
 def main():
-    u = np.array([-1, 1, 3])
-    v = np.array([3, -1, 5])
+    u = np.array([2, 3, -8, 1])
+    v = np.array([-1, 2, -5, -3])
     print('a', angle(u, v))
-    u = np.array([1, 0, 0,])
-    v = np.array([0, 0, 15])
+    u = np.array([-2, -3, -1, -1])
+    v = np.array([1, 2, 3, 4])
     print('b', angle(u, v))
-    u = np.array([-1, 2, 3])
-    v = np.array([sqrt(2), 1/sqrt(2), -1])
+    u = np.array([pi, sqrt(2), 0, 1])
+    v = np.array([1 / pi, sqrt(2), -1, 1])
     print('c', angle(u, v))
 
 
