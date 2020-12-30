@@ -19,12 +19,12 @@ pprint(u)
 print('nullity 1')
 
 print('b')
-A = Matrix([
+B = Matrix([
     [2, -2, -2],
     [4, -4, -4],
     [8, -8, -8]
 ])
-R, _ = A.rref()
+R, _ = B.rref()
 pprint(R)
 # x - y - z = 0     => x = s + t
 # y = s
@@ -37,6 +37,26 @@ pprint(MatAdd(
     MatMul(t, Matrix([1, 0, 1]))
 ))
 print('rank 1 nullity 2')
-# pprint(A.nullspace())
+# pprint(B.nullspace())
 
-# TODO: (c)
+print('c')
+C = Matrix([
+    [2, 9, -3],
+    [5, 6, -1],
+    [9, 8, -9]
+])
+R, _ = C.rref()
+pprint(R)
+print('rank 3 nullity 0')
+pprint(C.nullspace())
+
+print('d')
+D = Matrix([
+    [-3, 1, -1],
+    [2, 5, -7],
+    [4, 8, -4]
+])
+R, _ = D.rref()
+pprint(R)
+print('rank 3 nullity 0')
+pprint(C.nullspace())
