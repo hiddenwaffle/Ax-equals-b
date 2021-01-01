@@ -1,7 +1,9 @@
+# Elimination with Matrices
+# https://www.youtube.com/watch?v=QVKj3LADCnA&list=PL49CF3715CB9EF31D&index=2
+
 from sympy import *
 
 # Construct elementary matrices and multiply them by A
-
 A = Matrix([
     [1, 2, 1],
     [3, 8, 1],

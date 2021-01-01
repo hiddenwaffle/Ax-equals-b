@@ -15,6 +15,9 @@ class Graph:
         """color is from:
         https://matplotlib.org/3.1.0/gallery/color/named_colors.html
         """
+        v = self.cast(v)
+        if start is not None:
+            start = self.cast(start)
         ax = plt.gca()
         self.fix_bounds([v], is_vector=True)
         if start is None:
@@ -25,6 +28,7 @@ class Graph:
         """Expects a matrix whose columns are consecutive points of a polygon"""
         ax = plt.gca()
         points = m.T.tolist()
+        points = list(map(self.cast, points))  # TODO: untested
         self.fix_bounds(points)
         # https://stackoverflow.com/a/30252932
         ax.plot(*zip(*(points + points[:1])), marker='o', color=color)
@@ -65,3 +69,8 @@ class Graph:
                 self.ymax = v[1]
             ax.set_xlim(self.xmin - 1, self.xmax + 1)
             ax.set_ylim(self.ymin - 1, self.ymax + 1)
+
+    @staticmethod
+    def cast(v):
+        # prevent alternative number types like Sympy numbers
+        return [float(v[0]), float(v[1])]
