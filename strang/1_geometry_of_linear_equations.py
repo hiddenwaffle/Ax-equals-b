@@ -1,6 +1,3 @@
-# The Geometry of Linear Equations
-# https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D&index=1
-#
 # row "picture" shows the x in Ax=b
 # column "picture" shows the b in Ax=b
 

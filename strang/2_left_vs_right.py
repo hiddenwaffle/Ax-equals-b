@@ -1,5 +1,3 @@
-# https://www.youtube.com/watch?v=QVKj3LADCnA&list=PL49CF3715CB9EF31D&index=2
-
 from sympy import *
 
 a, b, c, d = symbols('a b c d')

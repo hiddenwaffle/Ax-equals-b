@@ -1,5 +1,3 @@
-# https://www.youtube.com/watch?v=FX4C-JpTFgY&list=PL49CF3715CB9EF31D&index=3
-
 from sympy import *
 
 A = Matrix([

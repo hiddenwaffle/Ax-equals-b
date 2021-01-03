@@ -1,5 +1,3 @@
-# https://youtu.be/FX4C-JpTFgY?t=1359
-
 from sympy import *
 
 a, b, c, d = symbols('a b c d')
@@ -30,4 +28,10 @@ A = Matrix([
 ])
 # "Those who like columns can see that vectors (1, 2) and (3, 7)
 #  point in different directions so I can get anything"
-pprint(A.inv())
+Ai = A.inv()
+I = eye(2)
+pprint(Eq(A * Ai, I))
+# "A * column j of Ai = column j of I"
+pprint(Eq(A * Ai.col(0), I.col(0)))
+pprint(Eq(A * Ai.col(1), I.col(1)))
+# "It's like solving a system of equations where we have two rhs instead of one"
