@@ -15,7 +15,12 @@ def main():
     f = x
     g = x ** 3
     print('a', ip(f, g))
-    # TODO
+    print('b', ip(g, f))
+    print('c', ip(3 * f, g))
+    print('d', ip(f, f))
+    print('e', norm(f))
+    print('f', ip(g, g))
+    print('g', norm(g))
 
 
 if __name__ == '__main__':
